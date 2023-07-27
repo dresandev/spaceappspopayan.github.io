@@ -111,90 +111,99 @@
     <!--==========================
     INICIO DE MOSAICOS
     ============================-->
+<!-- Add the PapaParse library --><!-- Add the PapaParse library -->
+<script src="js/papaparse.min.js"></script>
 
-    <!-- Add the PapaParse library -->
-    <script src="js/papaparse.min.js"></script>
+<style>
+  .speaker-container {
+    width: 300px; /* Fixed width of 300 pixels */
+    height: 300px; /* Fixed height of 300 pixels */
+    overflow: hidden;
+  }
 
-    <style>
-      .people-img {
-        width: 100%;
-        height: 300px; /* Adjust the height as needed */
-        object-fit: cover; /* Maintain image aspect ratio and fill the container */
-      }
-    </style>
-    <section id="speakers" class="wow fadeInUp">
-      <div class="container">
-        <div class="section-header">
-          <h2>MENTORES NASA SPACE APPS</h2>
-          <p>Nuestros embajadores y mentores que hacen posible este evento</p>
-        </div>
+  .speaker-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
 
-        <div class="row" id="speakersRow">
-          <!-- Speakers will be dynamically added here -->
-        </div>
-      </div>
-    </section>
+<section id="speakers" class="wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2>MENTORES NASA SPACE APPS</h2>
+      <p>Nuestros embajadores y mentores que hacen posible este evento</p>
+    </div>
 
-    <script>
-      // Function to display the speakers from the CSV data
-      function displaySpeakers(speakers) {
-        const speakersRow = document.getElementById('speakersRow');
+    <div class="row" id="speakersRow">
+      <!-- Speakers will be dynamically added here -->
+    </div>
+  </div>
+</section>
 
-        speakers.forEach((speaker) => {
-          const speakerCol = document.createElement('div');
-          speakerCol.className = 'col-lg-3 col-md-6';
+<script>
+  // Function to display the speakers from the CSV data
+  function displaySpeakers(speakers) {
+    const speakersRow = document.getElementById('speakersRow');
 
-          const speakerDiv = document.createElement('div');
-          speakerDiv.className = 'speaker';
+    speakers.forEach((speaker) => {
+      const speakerCol = document.createElement('div');
+      speakerCol.className = 'col-lg-3 col-md-6';
 
-          const img = document.createElement('img');
-          img.src = speaker.image;
-          img.alt = speaker.name;
-          img.className = 'img-fluid people-img';
+      const speakerDiv = document.createElement('div');
+      speakerDiv.className = 'speaker';
 
-          const detailsDiv = document.createElement('div');
-          detailsDiv.className = 'details';
+      const speakerContainer = document.createElement('div');
+      speakerContainer.className = 'speaker-container';
 
-          const h3 = document.createElement('h3');
-          const a = document.createElement('a');
-          a.href = 'speaker-details.html';
-          a.textContent = speaker.name;
-          h3.appendChild(a);
+      const img = document.createElement('img');
+      img.src = speaker.image;
+      img.alt = speaker.name;
 
-          const p = document.createElement('p');
-          p.textContent = speaker.description;
+      const detailsDiv = document.createElement('div');
+      detailsDiv.className = 'details';
 
-          const socialDiv = document.createElement('div');
-          socialDiv.className = 'social';
+      const h3 = document.createElement('h3');
+      const a = document.createElement('a');
+      a.href = 'speaker-details.html';
+      a.textContent = speaker.name;
+      h3.appendChild(a);
 
-          // Add social media links here if needed
-          // For example:
-          // const aTwitter = document.createElement('a');
-          // aTwitter.href = speaker.twitterLink;
-          // aTwitter.innerHTML = '<i class="fa fa-twitter"></i>';
-          // socialDiv.appendChild(aTwitter);
+      const p = document.createElement('p');
+      p.textContent = speaker.description;
 
-          detailsDiv.appendChild(h3);
-          detailsDiv.appendChild(p);
-          detailsDiv.appendChild(socialDiv);
+      const socialDiv = document.createElement('div');
+      socialDiv.className = 'social';
 
-          speakerDiv.appendChild(img);
-          speakerDiv.appendChild(detailsDiv);
+      // Add social media links here if needed
+      // For example:
+      // const aTwitter = document.createElement('a');
+      // aTwitter.href = speaker.twitterLink;
+      // aTwitter.innerHTML = '<i class="fa fa-twitter"></i>';
+      // socialDiv.appendChild(aTwitter);
 
-          speakerCol.appendChild(speakerDiv);
-          speakersRow.appendChild(speakerCol);
-        });
-      }
+      detailsDiv.appendChild(h3);
+      detailsDiv.appendChild(p);
+      detailsDiv.appendChild(socialDiv);
 
-      // Fetch the CSV file and display the speakers
-      fetch('./data/Embajadores.csv')
-        .then((response) => response.text())
-        .then((data) => {
-          const speakers = Papa.parse(data, { header: true }).data;
-          displaySpeakers(speakers);
-        })
-        .catch((error) => console.error('Error fetching CSV:', error));
-    </script>
+      speakerContainer.appendChild(img);
+      speakerDiv.appendChild(speakerContainer);
+      speakerDiv.appendChild(detailsDiv);
+
+      speakerCol.appendChild(speakerDiv);
+      speakersRow.appendChild(speakerCol);
+    });
+  }
+
+  // Fetch the CSV file and display the speakers
+  fetch('./data/Embajadores.csv')
+    .then((response) => response.text())
+    .then((data) => {
+      const speakers = Papa.parse(data, { header: true }).data;
+      displaySpeakers(speakers);
+    })
+    .catch((error) => console.error('Error fetching CSV:', error));
+</script>
 
 
     <!--==========================
