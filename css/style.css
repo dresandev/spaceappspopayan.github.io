@@ -4,16 +4,19 @@
   Author: BootstrapMade.com
   License: https://bootstrapmade.com/license/
 */
+.gallery-image {
+  width: 100%; /* Ajustar todas las imágenes al 100% del contenedor */
+  /* height: auto; */
+  object-fit: cover; /* Hacer que las imágenes se ajusten proporcionalmente dentro del contenedor */
+}
+
 
 
 /*--------------------------------------------------------------
 # mantener imagenes de tamano fijo..
 --------------------------------------------------------------*/
 
-.gallery-image {
-  width: 300px; /* Adjust the width as desired */
-  height: 300px; /* Adjust the height as desired */
-}
+
 
 /*--------------------------------------------------------------
 # General
