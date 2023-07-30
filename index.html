@@ -27,6 +27,47 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
+  <style>
+    /* Add CSS styles for the dynamic lines */
+    .title-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .title-container::before,
+    .title-container::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #ffffff; /* Change the line color as needed */
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .title-container::before {
+      top: -20px; /* Adjust the distance of the upper line from the title */
+      animation-name: moveLineLeft;
+    }
+
+    .title-container::after {
+      bottom: -20px; /* Adjust the distance of the lower line from the title */
+      animation-name: moveLineRight;
+    }
+
+    /* Add the CSS animation keyframes */
+    @keyframes moveLineLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes moveLineRight {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
 </head>
 
 <body>
@@ -40,7 +81,7 @@
       <div id="logo" class="pull-left">
         <!-- Uncomment below if you prefer to use a text logo -->
         <!-- <h1><a href="#main">P<span>o</span>p</a></h1> -->
-        <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" title=""></a>
+        <a href="#intro" class="scrollto"><img src="img/logo_inter.png" alt="" title=""></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -63,13 +104,35 @@
   <!--==========================
     Intro Section
   ============================-->
+
   <section id="intro">
     <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">NASA<br><span>SpaceApps 2023 </span> Popayán 🇨🇴 </h1>
-      <p class="mb-4 pb-0">7-8 Octubre, Popayán, departamento del Cauca</p>
+      <div id="logo" class="pull-left">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!-- <h1><a href="#main">P<span>o</span>p</a></h1> -->
+        <a href="#intro" class="scrollto"><img src="img/logo_pop.png" alt="" title=""></a>
+      </div>
+      <hr> <hr>
+      <div class="title-container">
+        <!-- <h1>NASA SpaceApps Popayán 🇨🇴</h1> -->
+        <h1 class="mb-4 pb-0">NASA <span>SpaceApps </span> Popayán 🇨🇴 </h1>
+        <p class="mb-4 pb-0">Del 7 al 8 Octubre, Popayán, departamento del Cauca</p>
+      </div>
+      <!-- <h1 class="mb-4 pb-0">NASA<br><span>SpaceApps 2023 </span> Popayán 🇨🇴 </h1> -->
+      <!-- <p class="mb-4 pb-0">7-8 Octubre, Popayán, departamento del Cauca</p> -->
+      <hr>
+      
+      <p class="mb-4 pb-0" style="font-size: 14px;">¡Únete a un emocionante <span style="color: #f82249;">hackathon internacional</span> organizado por la NASA! 🚀</p>
+
       <a href="https://youtu.be/hys5yHyGbl0" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
       <a href="#about" class="about-btn scrollto">Acerca del evento</a>
+      <div class="social-links">
+        <a href="https://twitter.com/SpaceAppsPPN" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.facebook.com/NASASpaceAppsPopayan" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/nasaspacepopayan" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/nasaspaceapps-popayan/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
     </div>
   </section>
 
@@ -82,7 +145,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h2>Acerca de Nasa SpaceApps Popayan</h2>
+            <h2>Acerca de Nasa SpaceApps Popayán</h2>
             <p>Nasa SpaceApps Popayán es una emocionante iniciativa que busca 
               fomentar la participación y la colaboración en la exploración
                espacial y la ciencia de datos. Es un evento anual que se lleva a 
@@ -278,7 +341,7 @@
     <section id="speakers" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <h2>ORGANIZADORES NASA SPACE APPS POPAYAN - LOCAL LEADS</h2>
+          <h2>ORGANIZADORES NASA SPACE APPS POPAYÁN - LOCAL LEADS</h2>
           <p>Organizadores</p>
         </div>
   
@@ -301,12 +364,12 @@
                 <div class="details">
                   <h3><a>David Santiago Garcia</a></h3>
                   <p>Universidad del Cauca</p>
-                  <div class="social">
+                  <!-- <div class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
                     <a href=""><i class="fa fa-google-plus"></i></a>
                     <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -318,9 +381,9 @@
                 <div class="details">
                   <h3><a href="https://sebasmos.github.io">Sebastián Cajas Ordóñez</a></h3>
                   <p>Harvard University, CeADAR</p>
-                  <div class="social">
+                  <!-- <div class="social">
                     <a href="https://www.linkedin.com/in/sebasmos777/"><i class="fa fa-linkedin"></i></a>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -661,7 +724,7 @@
          <li>
            <a data-toggle="collapse" class="collapsed" href="#faq1">¿Cuándo se llevará a cabo el NASA SpaceApps Challenge? <i class="fa fa-minus-circle"></i></a>
            <div id="faq1" class="collapse" data-parent="#faq-list">
-             <p>El NASA SpaceApps Challenge se llevará a cabo los días 20 y 21 de octubre de este año en nuestra sede central en la ciudad de Popayan. ¡Esperamos verte allí!</p>
+             <p>El NASA SpaceApps Challenge se llevará a cabo los días 20 y 21 de octubre de este año en nuestra sede central en la ciudad de Popayán. ¡Esperamos verte allí!</p>
            </div>
          </li>
 
@@ -906,7 +969,7 @@
        <div class="row">
 
          <div class="col-lg-4 col-md-6 footer-info">
-           <img src="img/logo.png" alt="TheEvenet">
+           <img src="img/logo_inter.png" alt="TheEvenet">
            <p>La hackaton mas grande de ciencia y tecnologia a nivel global promovida por la NASA y las agencias espaciales mas importantes del mundos.</p>
          </div>
       <!-- 
@@ -942,7 +1005,7 @@
 
    <div class="container">
      <div class="copyright">
-       &copy; Copyright <strong>NASA SpaceApps Popayan </strong>. Todos los derechos reservados
+       &copy; Copyright <strong>NASA SpaceApps Popayán </strong>. Todos los derechos reservados
      </div>
      <div class="credits">
        <!--
