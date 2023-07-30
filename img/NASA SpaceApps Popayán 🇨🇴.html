@@ -68,17 +68,6 @@
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
     }
-    /* logo ppal size */
-    #logobg img {
-      width: 200px; /* Set your default logo width here */
-    }
-
-    /* Media query for screens smaller than or equal to 768px (typical mobile devices) */
-    @media (max-width: 768px) {
-      #logobg img {
-        width: 120px; /* Set the smaller logo width for mobile devices */
-      }
-    }
   </style>
 </head>
 
@@ -120,17 +109,19 @@
   <section id="intro">
     <div class="intro-container wow fadeIn">
       <hr><hr>
-      <div id="logobg" class="pull-left">
-        <a href="#intro" class="scrollto"><img src="img/logo_pop.png" alt="" title=""></a>
+      <div id="logo" class="pull-left">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!-- <h1><a href="#main">P<span>o</span>p</a></h1> -->
+        <a href="#intro" class="scrollto "><img src="img/logo_pop.png" alt="" title=""></a>
       </div>
-      <hr><hr>
+      <hr> <hr>
       <div class="title-container">
-        <h1 class="mb-4 pb-0">NASA <span>SpaceApps</span> Popayán 🇨🇴</h1>
-        <p class="mb-4 pb-0">Del 7 al 8 Octubre, Popayán.</p>
-      </div>
-      <hr>
+        <!-- <h1>NASA SpaceApps Popayán 🇨🇴</h1> -->
+        <h1 class="mb-4 pb-0">NASA <span>SpaceApps </span> Popayán 🇨🇴 </h1>
+        <p class="mb-4 pb-0">Del 7 al 8 Octubre, Popayán, departamento del Cauca</p>
+      </div><hr>
       <p class="mb-4 pb-0" style="font-size: 14px;">¡Únete a un emocionante <span style="color: #f82249;">hackathon internacional</span> organizado por la NASA! 🚀</p>
-  
+
       <a href="#about" class="about-btn scrollto">Acerca del evento</a>
       <div class="social-links">
         <a href="https://twitter.com/SpaceAppsPPN" class="twitter"><i class="fa fa-twitter"></i></a>

@@ -12,12 +12,71 @@
 }
 
 
+/* Set white background for the section */
+#intro {
+  background-color: #ffffff;
+  size-adjust: auto;
+}
 
+/* Center the contents of the section horizontally and vertically */
+#intro .intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: auto; /* Set the section to occupy at least the full viewport height */
+}
+
+/* Adjust logo size for mobile devices */
+@media (max-width: 768px) {
+  #intro .intro-container #logo a img {
+    max-width: 200px; /* Adjust the max-width as needed for your logo */
+    height: auto; /* Allow the height to adjust proportionally */
+  }
+}
 /*--------------------------------------------------------------
-# mantener imagenes de tamano fijo..
+titles
 --------------------------------------------------------------*/
 
+    /* Add CSS styles for the dynamic lines */
+    .title-container {
+      position: relative;
+      text-align: center;
+    }
 
+    .title-container::before,
+    .title-container::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #ffffff; /* Change the line color as needed */
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .title-container::before {
+      top: -20px; /* Adjust the distance of the upper line from the title */
+      animation-name: moveLineLeft;
+    }
+
+    .title-container::after {
+      bottom: -20px; /* Adjust the distance of the lower line from the title */
+      animation-name: moveLineRight;
+    }
+
+    /* Add the CSS animation keyframes */
+    @keyframes moveLineLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes moveLineRight {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
 
 /*--------------------------------------------------------------
 # General
