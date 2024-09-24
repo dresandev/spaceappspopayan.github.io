@@ -1165,6 +1165,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 60px 0;
 }
 
+#supporters .supporter-logo {
+  height: 120px; /* Cambiado de 160px a 120px */
+}
+
 #supporters .supporters-wrap {
   border-top: 1px solid #e0e5fa;
   border-left: 1px solid #e0e5fa;
