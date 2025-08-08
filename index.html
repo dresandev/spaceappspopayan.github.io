@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <title>NASA SpaceApps Popayán Colombia </title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta content="NASA Space Apps Popayán es un evento abierto a estudiantes, profesionales y curiosos que buscan impulsar la ciencia, la tecnología y la exploración espacial." name="description">
 
   <!-- Favicons -->
   <link href="img/favicon.ico" rel="icon">
   <link href="img/favicon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.2/venobox.min.css">
 
   <!-- Bootstrap CSS File -->
@@ -26,7 +23,7 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-min.css" rel="stylesheet">
 
   <style>
     /* Add CSS styles for the dynamic lines */
@@ -79,7 +76,61 @@
         width: 120px; /* Set the smaller logo width for mobile devices */
       }
     }
+
+    /* Screen reader only text */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Social links spacing improvements */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;/* Espaciado uniforme entre iconos */
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* Hover effects for social links */
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(248, 34, 73, 0.3);
+    }
+
+ 
+    @media (max-width: 480px) {
+      .social-links {
+        gap: 10px;
+      }
+      
+      .social-links a {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
   </style>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+  
 </head>
 
 <body>
@@ -93,7 +144,7 @@
       <div id="logo" class="pull-left">
         <!-- Uncomment below if you prefer to use a text logo -->
         <!-- <h1><a href="#main">P<span>o</span>p</a></h1> -->
-        <a href="#intro" class="scrollto"><img src="img/logo_inter.png" alt="" title=""></a>
+        <a href="#intro" class="scrollto" aria-label="NASA SpaceApps Popayán - Ir al inicio"><img src="img/logo_inter.png" alt="Logo NASA SpaceApps Popayán - Hackathon Internacional de Ciencia y Tecnología" title="NASA SpaceApps Popayán"></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -108,7 +159,7 @@
           <li><a href="#supporters">Sponsors</a></li>
           <li><a href="#requirements">Requisitos</a></li>
           <li><a href="#contact">Contacto</a></li>
-          <li class="buy-tickets"><a href="https://forms.gle/9WuQ2nqAWwXj1vUp6">Registrarme</a></li>
+          <li class="buy-tickets"><a href="https://forms.gle/9WuQ2nqAWwXj1vUp6" aria-label="Registrarse para NASA SpaceApps Popayán 2025 - Formulario de inscripción" target="_blank" rel="noopener noreferrer">Registrarme</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -123,7 +174,7 @@
     <div class="intro-container wow fadeIn">
       <hr><hr>
       <div id="logobg" class="pull-left">
-        <a href="#intro" class="scrollto"><img src="img/logo_pop.png" alt="" title=""></a>
+        <a href="#intro" class="scrollto" aria-label="NASA SpaceApps Popayán - Logo principal del evento"><img src="img/logo_pop.png" alt="Logo oficial NASA SpaceApps Popayán 2025 - Hackathon de exploración espacial" title="NASA SpaceApps Popayán 2025"></a>
       </div>
       <hr><hr>
       <div class="title-container">
@@ -135,10 +186,22 @@
   
       <a href="#about" class="about-btn scrollto">Acerca del evento</a>
       <div class="social-links">
-        <a href="https://twitter.com/SpaceAppsPPN" class="twitter"><i class="fa fa-twitter"></i></a>
-        <a href="https://www.facebook.com/NASASpaceAppsPopayan" class="facebook"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/nasaspacepopayan" class="instagram"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/nasaspaceapps-popayan/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="https://twitter.com/SpaceAppsPPN" aria-label="Síguenos en Twitter - NASA SpaceApps Popayán" class="twitter" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <span class="sr-only">Twitter</span>
+        </a>
+        <a href="https://www.facebook.com/NASASpaceAppsPopayan" aria-label="Síguenos en Facebook - NASA SpaceApps Popayán" class="facebook" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <span class="sr-only">Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/nasaspacepopayan" aria-label="Síguenos en Instagram - NASA SpaceApps Popayán" class="instagram" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <span class="sr-only">Instagram</span>
+        </a>
+        <a href="https://www.linkedin.com/company/nasaspaceapps-popayan/" aria-label="Conéctate en LinkedIn - NASA SpaceApps Popayán" class="linkedin" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+          <span class="sr-only">LinkedIn</span>
+        </a>
       </div>
      
      
@@ -169,7 +232,7 @@
           </div>
           <div class="col-lg-3">
             <h3>Cuándo</h3>
-            <p>Sábado-Domingo<br>5-6 Octubre de 2024</p>
+            <p>Sábado-Domingo<br>5-6 Octubre de 2025</p>
           </div>
         </div>
       </div>
@@ -263,7 +326,7 @@
     </div>
 
     <!-- Contenedor para los embajadores, donde se añadirán dinámicamente -->
-    <div class="row" id="speakersRow">
+    <div class="row justify-content-center" id="speakersRow">
       <!-- Los embajadores serán añadidos aquí dinámicamente -->
     </div>
   </div>
@@ -352,20 +415,20 @@ INICIO DE MOSAICOS
       <p>Organizadores</p>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-lg-6 col-md-6">
         <div class="speaker">
           <div class="speaker-container">
-            <img src="img/team_old/Alejandro Cardenas2.jpg" alt="Alejandro Cardenas" class="img-fluid people-img">
+            <img src="img/team_2025/jhojan-orozco.webp" alt="Jhojan Orozco" class="img-fluid people-img" width="540" height="540">
             <div class="details">
-              <h3><a href="https://sebasmos.github.io">Alejandro Cardenas</a></h3>
+              <h3>Jhojan Orozco</h3>
               <p>Universidad Del Cauca</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6">
+      <!-- <div class="col-lg-6 col-md-6">
         <div class="speaker">
           <div class="speaker-container">
             <img src="img/team_old/Juliana gomez.jpg" alt="Juliana Gomez" class="img-fluid people-img">
@@ -375,7 +438,7 @@ INICIO DE MOSAICOS
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -500,39 +563,39 @@ INICIO DE MOSAICOS
   </div>
 </section>
            
-           <!-- Agregar más actividades del Día 1 aquí -->
-   
-         </div>
-   
-         <!-- Día 2 -->
-         <div role="tabpanel" class="col-lg-9 tab-pane fade" id="day-2">
-   
-           <div class="row schedule-item">
-             <div class="col-md-2"><time>10:00 AM</time></div>
-             <div class="col-md-10">
-               <!-- <div class="speaker">
-                 <img src="img/speakers/1.jpg" alt="Brenden Legros">
-               </div> -->
-               <h4>Mentorias <span>Brenden Legros</span></h4>
-               <p>Espacio abierto para mentorias</p>
-             </div>
-           </div>
-   
-           <!-- Agregar más actividades del Día 2 aquí -->
-   
-           <!-- Premiación -->
-           <div class="row schedule-item">
-             <div class="col-md-2"><time>06:00 PM</time></div>
-             <div class="col-md-10">
-               <h4>Premiación de NASA SpaceApps</h4>
-               <p>Celebra el éxito y la creatividad de los participantes y equipos ganadores en la ceremonia de premiación de NASA SpaceApps.</p>
-             </div>
-           </div>
-   
-         </div>
-   
-       </div>
-     </div>
+      <!-- Agregar más actividades del Día 1 aquí -->
+
+  </div>
+
+    <!-- Día 2 -->
+  <div role="tabpanel" class="col-lg-9 tab-pane fade" id="day-2">
+
+      <div class="row schedule-item">
+        <div class="col-md-2"><time>10:00 AM</time></div>
+        <div class="col-md-10">
+          <!-- <div class="speaker">
+            <img src="img/speakers/1.jpg" alt="Brenden Legros">
+          </div> -->
+          <h4>Mentorias <span>Brenden Legros</span></h4>
+          <p>Espacio abierto para mentorias</p>
+        </div>
+      </div>
+
+      <!-- Agregar más actividades del Día 2 aquí -->
+
+      <!-- Premiación -->
+      <div class="row schedule-item">
+        <div class="col-md-2"><time>06:00 PM</time></div>
+        <div class="col-md-10">
+          <h4>Premiación de NASA SpaceApps</h4>
+          <p>Celebra el éxito y la creatividad de los participantes y equipos ganadores en la ceremonia de premiación de NASA SpaceApps.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  </div>
    </section>
 
    <!--==========================
@@ -574,8 +637,8 @@ INICIO DE MOSAICOS
 
       <div class="col-lg-12 ">
         <div class="venue-gallery d-flex justify-content-center">
-          <a href="img/venue-gallery/2.jpg" class="venobox" data-gall="venue-gallery">
-            <img src="img/venue-gallery/2.jpg" alt="" class="img-fluid gallery-image">
+          <a href="img/venue-gallery/2.jpg" class="venobox" data-gall="venue-gallery" aria-label="Ver galería de fotos del Centro de Convenciones Casa de La Moneda - Sede del evento">
+            <img src="img/venue-gallery/2.jpg" alt="Foto del Centro de Convenciones Casa de La Moneda, sede del NASA SpaceApps Popayán 2025" class="img-fluid gallery-image">
           </a>
         </div>
       </div>
@@ -665,15 +728,14 @@ INICIO DE MOSAICOS
      </div>
    
      <div class="owl-carousel gallery-carousel">
-       <a href="img/gallery/1.png" class="venobox" data-gall="gallery-carousel"><img class="gallery-image" src="img/gallery/1.png" alt=""></a>
-       <a href="img/gallery/2.png" class="venobox" data-gall="gallery-carousel"><img class="gallery-image" src="img/gallery/2.png" alt=""></a>
-       <a href="img/gallery/3.png" class="venobox" data-gall="gallery-carousel"><img class="gallery-image" src="img/gallery/3.png" alt=""></a>
-       <a href="img/gallery/4.png" class="venobox" data-gall="gallery-carousel"><img class="gallery-image" src="img/gallery/4.png" alt=""></a>
-       <a href="img/gallery/5.png" class="venobox" data-gall="gallery-carousel"><img class="gallery-image" src="img/gallery/5.png" alt=""></a>
-       <a href="img/gallery/6.png" class="venobox" data-gall="gallery-carousel"><img class="gallery-image" src="img/gallery/6.png" alt=""></a>
-       <a href="img/gallery/7.png" class="venobox" data-gall="gallery-carousel"><img class="gallery-image" src="img/gallery/7.png" alt=""></a>
-       <a href="img/gallery/8.png" class="venobox" data-gall="gallery-carousel"><img class="gallery-image" src="img/gallery/8.png" alt=""></a>
-
+       <a href="img/gallery/1.webp" class="venobox" data-gall="gallery-carousel" aria-label="Ver imagen 1 de eventos pasados NASA SpaceApps Popayán"><img class="gallery-image" src="img/gallery/1.webp" alt="Foto del evento NASA SpaceApps Popayán" loading="lazy"> </a>
+       <a href="img/gallery/2.webp" class="venobox" data-gall="gallery-carousel" aria-label="Ver imagen 2 de eventos pasados NASA SpaceApps Popayán"><img class="gallery-image" src="img/gallery/2.webp" alt="Foto del evento NASA SpaceApps Popayán" loading="lazy"></a>
+       <a href="img/gallery/3.webp" class="venobox" data-gall="gallery-carousel" aria-label="Ver imagen 3 de eventos pasados NASA SpaceApps Popayán"><img class="gallery-image" src="img/gallery/3.webp" alt="Foto del evento NASA SpaceApps Popayán" loading="lazy"></a>
+       <a href="img/gallery/4.webp" class="venobox" data-gall="gallery-carousel" aria-label="Ver imagen 4 de eventos pasados NASA SpaceApps Popayán"><img class="gallery-image" src="img/gallery/4.webp" alt="Foto del evento NASA SpaceApps Popayán" loading="lazy"></a>
+       <a href="img/gallery/5.webp" class="venobox" data-gall="gallery-carousel" aria-label="Ver imagen 5 de eventos pasados NASA SpaceApps Popayán"><img class="gallery-image" src="img/gallery/5.webp" alt="Foto del evento NASA SpaceApps Popayán" loading="lazy"></a>
+       <a href="img/gallery/6.webp" class="venobox" data-gall="gallery-carousel" aria-label="Ver imagen 6 de eventos pasados NASA SpaceApps Popayán"><img class="gallery-image" src="img/gallery/6.webp" alt="Foto del evento NASA SpaceApps Popayán" loading="lazy"></a>
+       <a href="img/gallery/7.webp" class="venobox" data-gall="gallery-carousel" aria-label="Ver imagen 7 de eventos pasados NASA SpaceApps Popayán"><img class="gallery-image" src="img/gallery/7.webp" alt="Foto del evento NASA SpaceApps Popayán" loading="lazy"></a>
+       <a href="img/gallery/8.webp" class="venobox" data-gall="gallery-carousel" aria-label="Ver imagen 8 de eventos pasados NASA SpaceApps Popayán"><img class="gallery-image" src="img/gallery/8.webp" alt="Foto del evento NASA SpaceApps Popayán" loading="lazy"></a>
      </div>
    </section>
    
@@ -690,22 +752,22 @@ INICIO DE MOSAICOS
       </div>
       <div class="supporters-wrap">
         <div class="supporter-logo">
-          <img src="img/supporters/1.png" class="img-fluid gallery-image" alt="">
+          <img src="img/supporters/1.webp" class="img-fluid gallery-image" alt="Logo Universidad del Cauca - Sponsor oficial NASA SpaceApps Popayán">
         </div>
         <div class="supporter-logo">
-          <img src="img/supporters/2.png" class="img-fluid gallery-image" alt="">
+          <img src="img/supporters/2.webp" class="img-fluid gallery-image" alt="Logo AESS Unicauca - Organizador NASA SpaceApps Popayán">
         </div>
         <div class="supporter-logo">
-          <img src="img/supporters/3.png" class="img-fluid gallery-image" alt="">
+          <img src="img/supporters/3.webp" class="img-fluid gallery-image" alt="Logo Facultad de Ingeniería Electrónica y Telecomunicaciones - Sponsor NASA SpaceApps">
         </div>
         <div class="supporter-logo">
-          <img src="img/supporters/4.png" class="img-fluid gallery-image" alt="">
+          <img src="img/supporters/4.webp" class="img-fluid gallery-image" alt="Logo NASA - Organizador internacional Space Apps Challenge">
         </div>
         <div class="supporter-logo">
-          <img src="img/supporters/5.png" class="img-fluid gallery-image" alt="">
+          <img src="img/supporters/5.webp" class="img-fluid gallery-image" alt="Logo Alcaldía de Popayán - Sponsor local NASA SpaceApps">
         </div>
         <div class="supporter-logo">
-          <img src="img/supporters/6.png" class="img-fluid gallery-image" alt="">
+          <img src="img/supporters/6.webp" class="img-fluid gallery-image" alt="Logo Sponsor adicional NASA SpaceApps Popayán">
         </div>
 
     </div>
@@ -748,51 +810,49 @@ INICIO DE MOSAICOS
    </div>
    <div class="row justify-content-center">
      <div class="col-lg-9">
-       <ul id="faq-list">
+       
+       <details>
+         <summary>¿Cuándo se llevará a cabo el NASA SpaceApps Challenge?</summary>
+         <div class="answer">
+           El NASA SpaceApps Challenge se llevará a cabo los días 5 y 6 de octubre de este año en nuestra sede central en la ciudad de Popayán. ¡Esperamos verte allí!
+         </div>
+       </details>
 
-         <li>
-           <a data-toggle="collapse" class="collapsed" href="#faq1">¿Cuándo se llevará a cabo el NASA SpaceApps Challenge? <i class="fa fa-minus-circle"></i></a>
-           <div id="faq1" class="collapse" data-parent="#faq-list">
-             <p>El NASA SpaceApps Challenge se llevará a cabo los días 5 y 6 de octubre de este año en nuestra sede central en la ciudad de Popayán. ¡Esperamos verte allí!</p>
-           </div>
-         </li>
+       <details>
+         <summary>¿Cuáles son los requisitos para participar en el evento?</summary>
+         <div class="answer">
+           Para participar en el NASA SpaceApps Challenge, necesitas formar un equipo de 4 a 6 personas y registrar tu equipo a través de nuestro sitio web. No hay requisitos de edad o experiencia específicos, ¡todos son bienvenidos!
+         </div>
+       </details>
 
-         <li>
-           <a data-toggle="collapse" href="#faq2" class="collapsed">¿Cuáles son los requisitos para participar en el evento? <i class="fa fa-minus-circle"></i></a>
-           <div id="faq2" class="collapse" data-parent="#faq-list">
-             <p>Para participar en el NASA SpaceApps Challenge, necesitas formar un equipo de 4 a 6 personas y registrar tu equipo a través de nuestro sitio web. No hay requisitos de edad o experiencia específicos, ¡todos son bienvenidos!</p>
-           </div>
-         </li>
+       <details>
+         <summary>¿Cuál es el objetivo del NASA SpaceApps Challenge?</summary>
+         <div class="answer">
+           El objetivo del NASA SpaceApps Challenge es reunir a entusiastas de la ciencia, ingeniería, tecnología y otras disciplinas para resolver desafíos de la NASA y contribuir a la exploración espacial. Los equipos desarrollarán soluciones creativas y podrán ser reconocidos a nivel global.
+         </div>
+       </details>
 
-         <li>
-           <a data-toggle="collapse" href="#faq3" class="collapsed">¿Cuál es el objetivo del NASA SpaceApps Challenge? <i class="fa fa-minus-circle"></i></a>
-           <div id="faq3" class="collapse" data-parent="#faq-list">
-             <p>El objetivo del NASA SpaceApps Challenge es reunir a entusiastas de la ciencia, ingeniería, tecnología y otras disciplinas para resolver desafíos de la NASA y contribuir a la exploración espacial. Los equipos desarrollarán soluciones creativas y podrán ser reconocidos a nivel global.</p>
-           </div>
-         </li>
+       <details>
+         <summary>¿Se proporcionarán recursos y materiales durante el evento?</summary>
+         <div class="answer">
+           Sí, durante el NASA SpaceApps Challenge, se proporcionarán recursos y materiales necesarios para que los equipos puedan trabajar en sus proyectos. También habrá mentores disponibles para brindar orientación y apoyo a los participantes.
+         </div>
+       </details>
 
-         <li>
-           <a data-toggle="collapse" href="#faq4" class="collapsed">¿Se proporcionarán recursos y materiales durante el evento? <i class="fa fa-minus-circle"></i></a>
-           <div id="faq4" class="collapse" data-parent="#faq-list">
-             <p>Sí, durante el NASA SpaceApps Challenge, se proporcionarán recursos y materiales necesarios para que los equipos puedan trabajar en sus proyectos. También habrá mentores disponibles para brindar orientación y apoyo a los participantes.</p>
-           </div>
-         </li>
+       <details>
+         <summary>¿Hay algún premio para los ganadores?</summary>
+         <div class="answer">
+           Sí, habrá premios para los equipos ganadores del NASA SpaceApps Challenge. Además de reconocimientos locales, los proyectos destacados tendrán la oportunidad de ser evaluados a nivel global por la NASA y pueden recibir premios adicionales y oportunidades de colaboración.
+         </div>
+       </details>
 
-         <li>
-           <a data-toggle="collapse" href="#faq5" class="collapsed">¿Hay algún premio para los ganadores? <i class="fa fa-minus-circle"></i></a>
-           <div id="faq5" class="collapse" data-parent="#faq-list">
-             <p>Sí, habrá premios para los equipos ganadores del NASA SpaceApps Challenge. Además de reconocimientos locales, los proyectos destacados tendrán la oportunidad de ser evaluados a nivel global por la NASA y pueden recibir premios adicionales y oportunidades de colaboración.</p>
-           </div>
-         </li>
+       <details>
+         <summary>¿Cómo puedo inscribirme para participar en el evento?</summary>
+         <div class="answer">
+           Las inscripciones para el NASA SpaceApps Challenge estarán abiertas a partir del 18 de Julio. Puedes registrarte en nuestro sitio web oficial y completar el formulario de inscripción para tu equipo. ¡No te pierdas esta emocionante oportunidad!
+         </div>
+       </details>
 
-         <li>
-           <a data-toggle="collapse" href="#faq6" class="collapsed">¿Cómo puedo inscribirme para participar en el evento? <i class="fa fa-minus-circle"></i></a>
-           <div id="faq6" class="collapse" data-parent="#faq-list">
-             <p>Las inscripciones para el NASA SpaceApps Challenge estarán abiertas a partir del 18 de Julio. Puedes registrarte en nuestro sitio web oficial y completar el formulario de inscripción para tu equipo. ¡No te pierdas esta emocionante oportunidad!</p>
-           </div>
-         </li>
-
-       </ul>
      </div>
    </div>
  </div>
@@ -810,7 +870,7 @@ INICIO DE MOSAICOS
           <div class="card-body">
             <h5 class="card-title">Requisitos Mínimos para Enviar un Proyecto</h5>
             <ul class="requirements-list">
-              <li>Responder a uno de los desafíos oficiales de Space Apps 2024.</li>
+              <li>Responder a uno de los desafíos oficiales de Space Apps 2025.</li>
               <li>Todos los miembros del equipo deben estar registrados en la Página del Proyecto.</li>
               <li>Completar todos los campos requeridos en la página de envío del proyecto.</li>
               <li>Usar el idioma inglés en la página de envío y materiales vinculados (excepto en el video del proyecto, que puede incluir subtítulos en inglés).</li>
@@ -887,7 +947,7 @@ INICIO DE MOSAICOS
       <div class="section-header">
         <h2>Eventos pasados</h2>
       </div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/hys5yHyGbl0" frameborder="0" allowfullscreen></iframe>
+      <lite-youtube videoid="hys5yHyGbl0"></lite-youtube>
     </div>
   </section>
   
@@ -905,7 +965,7 @@ INICIO DE MOSAICOS
          <p>No dudes en comentar cualquier duda o inquietud a traves de los siguientes canales de comunicación</p>
        </div>
 
-       <div class="row contact-info">
+       <div class="row contact-info justify-content-center">
 
          <div class="col-md-4">
            <div class="contact-address">
@@ -927,7 +987,7 @@ INICIO DE MOSAICOS
            <div class="contact-email">
              <i class="ion-ios-email-outline"></i>
              <h3>Email</h3>
-             <p><a href="mailto:aessnasaspace@gmail.com">aessnasaspace@gmail.com</a></p>
+             <p><a href="mailto:aessnasaspace@gmail.com" aria-label="Enviar correo a NASA SpaceApps Popayán">aessnasaspace@gmail.com</a></p>
            </div>
          </div>
 
@@ -974,7 +1034,7 @@ INICIO DE MOSAICOS
        <div class="row">
 
          <div class="col-lg-4 col-md-6 footer-info">
-           <img src="img/logo_inter.png" alt="TheEvenet">
+           <img src="img/logo_inter.png" alt="Logo NASA SpaceApps Popayán - Hackathon Internacional de Ciencia y Tecnología">
            <p>La hackaton mas grande de ciencia y tecnologia a nivel global promovida por la NASA y las agencias espaciales mas importantes del mundos.</p>
          </div>
       <!-- 
@@ -996,10 +1056,22 @@ INICIO DE MOSAICOS
            </p>
 
            <div class="social-links">
-             <a href="https://twitter.com/SpaceAppsPPN" class="twitter"><i class="fa fa-twitter"></i></a>
-             <a href="https://www.facebook.com/NASASpaceAppsPopayan" class="facebook"><i class="fa fa-facebook"></i></a>
-             <a href="https://www.instagram.com/nasaspacepopayan" class="instagram"><i class="fa fa-instagram"></i></a>
-             <a href="https://www.linkedin.com/company/nasaspaceapps-popayan/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+             <a href="https://twitter.com/SpaceAppsPPN" class="twitter" aria-label="Síguenos en Twitter - NASA SpaceApps Popayán" target="_blank" rel="noopener noreferrer">
+               <i class="fa fa-twitter" aria-hidden="true"></i>
+               <span class="sr-only">Twitter</span>
+             </a>
+             <a href="https://www.facebook.com/NASASpaceAppsPopayan" class="facebook" aria-label="Síguenos en Facebook - NASA SpaceApps Popayán" target="_blank" rel="noopener noreferrer">
+               <i class="fa fa-facebook" aria-hidden="true"></i>
+               <span class="sr-only">Facebook</span>
+             </a>
+             <a href="https://www.instagram.com/nasaspacepopayan" class="instagram" aria-label="Síguenos en Instagram - NASA SpaceApps Popayán" target="_blank" rel="noopener noreferrer">
+               <i class="fa fa-instagram" aria-hidden="true"></i>
+               <span class="sr-only">Instagram</span>
+             </a>
+             <a href="https://www.linkedin.com/company/nasaspaceapps-popayan/" class="linkedin" aria-label="Conéctate en LinkedIn - NASA SpaceApps Popayán" target="_blank" rel="noopener noreferrer">
+               <i class="fa fa-linkedin" aria-hidden="true"></i>
+               <span class="sr-only">LinkedIn</span>
+             </a>
            </div>
 
          </div>
@@ -1019,12 +1091,12 @@ INICIO DE MOSAICOS
          Licensing information: https://bootstrapmade.com/license/
          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
        -->
-       Diseñado por <a href="https://fiet.unicauca.edu.co/aess/">AESS Unicauca</a>
+       Diseñado por <a href="https://fiet.unicauca.edu.co/aess/" aria-label="Visitar sitio web de AESS Universidad del Cauca" target="_blank" rel="noopener noreferrer">AESS Unicauca</a>
      </div>
    </div>
  </footer><!-- #footer -->
 
- <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+ <a href="#" class="back-to-top" aria-label="Volver al inicio de la página"><i class="fa fa-angle-up" aria-hidden="true"></i><span class="sr-only">Volver arriba</span></a>
 
  <!-- JavaScript Libraries -->
  <script src="lib/jquery/jquery.min.js"></script>
